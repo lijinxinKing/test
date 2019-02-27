@@ -18,4 +18,9 @@ public class GoodsService {
         allGoods = goodsMapper.GetAllGoods();
         return allGoods;
     }
+
+    public void AddGoods(Goods goods){
+        goodsMapper.InsertGoods(goods);
+    }
+
 }

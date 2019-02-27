@@ -4,8 +4,6 @@ import com.atguigu.springboot.dao.DepartmentDao;
 import com.atguigu.springboot.dao.EmployeeDao;
 import com.atguigu.springboot.entities.Department;
 import com.atguigu.springboot.entities.Employee;
-import com.atguigu.springboot.entities.Goods;
-import com.atguigu.springboot.service.GoodsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,27 +19,10 @@ public class EmployeeController {
     @Autowired
     DepartmentDao departmentDao;
 
-    @Autowired
-    GoodsService goodsService;
-
-    @GetMapping("/goodslist")
-    public String goodsList(Model model){
-        Collection<Goods>goodsList = goodsService.GetAllGoods();
-        model.addAttribute("allgoods",goodsList);
-        return "goods/list";
-    }
-
-
-    @GetMapping("/about")
-    public String aboutGoods(){
-        return "goods/about";
-    }
-
     //查询所有员工返回列表页面
     @GetMapping("/emps")
     public String  list(Model model){
         Collection<Employee> employees = employeeDao.getAll();
-
         //放在请求域中
         model.addAttribute("emps",employees);
         // thymeleaf默认就会拼串
@@ -74,7 +55,6 @@ public class EmployeeController {
 
     @GetMapping("/user/{username}")
     public String toShowUser(@PathVariable("username")String username){
-
         return "";
     }
     //来到修改页面，查出当前员工，在页面回显
