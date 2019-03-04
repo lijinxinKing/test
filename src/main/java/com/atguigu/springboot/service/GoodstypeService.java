@@ -24,4 +24,12 @@ public class GoodstypeService {
         goodstypeMapper.InsertGoodstype(goodstype);
     }
 
+    public void DeleteGoodsType(Integer id){
+        goodstypeMapper.DeleteGoodsType(id);
+    }
+
+    public String GetTypeName(Integer id){
+        goodstype goodstype =  goodstypeMapper.GetGoodsTypeById(id);
+        return goodstype.getGoodstype();
+    }
 }

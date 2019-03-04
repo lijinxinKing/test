@@ -15,8 +15,9 @@ public interface GoodsMapper {
     @Select("select *from  goods")
     public List<Goods> GetAllGoods();
 
-    @Insert("insert into goods (info,type,estimate) values (#{info},#{type},#{estimate})")
+    @Insert("insert into goods (info,goodstype,estimate) values (#{info},#{type},#{estimate})")
     @Options(useGeneratedKeys = true,keyProperty = "Id",keyColumn = "id")
     public int InsertGoods(Goods goods);
+
 
 }

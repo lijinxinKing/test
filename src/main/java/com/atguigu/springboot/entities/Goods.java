@@ -1,20 +1,36 @@
 package com.atguigu.springboot.entities;
 
+import com.atguigu.springboot.service.GoodstypeService;
+import org.omg.PortableInterceptor.INACTIVE;
+
 import java.io.Serializable;
 
 public class Goods {
     private Integer id;
     private String info;
-    private String type;
+    private Integer type;
+
+    public void setTypeName(String typeName) {
+        this.typeName = typeName;
+    }
+
+    private String typeName;
     private String estimate;
 
-    public Goods(String info, String type, String estimate) {
+    public Goods(String info, Integer type, String estimate) {
         this.info = info;
         this.type = type;
         this.estimate = estimate;
     }
 
-    public Goods(Integer id, String info, String type, String estimate) {
+    public Goods(Integer id, String info,String typeName, String estimate) {
+        this.id = id;
+        this.info = info;
+        this.typeName = typeName;
+        this.estimate = estimate;
+    }
+
+    public Goods(Integer id, String info, Integer type, String estimate) {
         this.id = id;
         this.info = info;
         this.type = type;
@@ -46,11 +62,18 @@ public class Goods {
         this.info = info;
     }
 
-    public String getType() {
+    public Integer getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public String getTypeName(){
+        Integer id = this.getId();
+        GoodstypeService goodstypeService = new GoodstypeService();
+        String typeName = goodstypeService.GetTypeName(id);
+        return typeName;
+    }
+
+    public void setType(Integer type) {
         this.type = type;
     }
 

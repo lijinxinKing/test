@@ -62,7 +62,9 @@
 
 						<div class="form-group">
 							<label>商品类型</label>
-							<input name="goodstype" type="text" class="form-control"  />
+							<select class="form-control" name="id">
+								<option th:selected="${dept.id}" th:value="${dept.id}" th:each="dept:${allgoodstype}" th:text="${dept.goodstype}">1</option>
+							</select>
 						</div>
 
 						<div class="form-group">

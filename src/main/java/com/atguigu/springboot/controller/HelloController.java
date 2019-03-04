@@ -13,11 +13,6 @@ import java.util.Map;
 @Controller
 public class HelloController {
 
-//    @RequestMapping({"/","/index.html"})
-//    public String index(){
-//        return "index";
-//    }
-
     @ResponseBody
     @RequestMapping("/hello")
     public  String hello(@RequestParam("user") String user){
@@ -34,7 +29,5 @@ public class HelloController {
         map.put("users",Arrays.asList("zhangsan","lisi","wangwu"));
         return "success";
     }
-
-
 
 }

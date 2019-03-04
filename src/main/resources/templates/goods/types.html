@@ -42,7 +42,7 @@
 		</style>
 	</head>
 
-	<body>
+	<body background-color="#ffff">
 		<!--引入抽取的topbar-->
 		<!--模板名：会使用thymeleaf的前后缀配置规则进行解析-->
 		<div th:replace="commons/bar::topbar"></div>
@@ -56,19 +56,24 @@
 					<!--需要区分是员工修改还是添加；-->
 					<form th:action="@{/goodstypemanager}" method="post">
 						<div class="form-group">
-							<label>已存在商品类型</label>
-							<table>
-								<tr th:each="goodstypes:${allgoodstype}">
-									<td th:text="${goodstypes.goodstype}"></td>
+							<table class="table table-striped table-sm">
+								<tr>
+									<th>编号</th>
+									<th>商品类型</th>
 								</tr>
+								<tr th:each="goodstypes:${allgoodstype}">
+									<td th:text="${goodstypes.getId()}"></td>
+									<td th:text="${goodstypes.getGoodstype()}"></td>
+								</tr>
+								<div class="form-group">
+									<td>
+										<input name="goodstype" type="text" class="form-control" />
+										<button class="btn btn-sm btn-primary" type="submit">添加</button>
+										<a th:href="@{/goodstypemanager}" class="btn btn-sm btn-danger deleteBtn" >删除</a>
+									</td>
+								</div>
 							</table>
-							<div class="form-group">
-								<label>商品类型</label>
-								<input name="goodstype" type="text" class="form-control" />
-							</div>
-
 						</div>
-						<button type="submit" class="btn btn-primary">添加</button>
 					</form>
 				</main>
 			</div>
