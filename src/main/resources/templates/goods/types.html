@@ -56,25 +56,31 @@
 					<!--需要区分是员工修改还是添加；-->
 					<form th:action="@{/goodstypemanager}" method="post">
 						<div class="form-group">
-							<table class="table table-striped table-sm">
+							<table class="table">
 								<tr>
+									<th>ID</th>
 									<th>编号</th>
 									<th>商品类型</th>
 								</tr>
 								<tr th:each="goodstypes:${allgoodstype}">
+									<td th:text="${goodstypesStat.index+1}">
 									<td th:text="${goodstypes.getId()}"></td>
 									<td th:text="${goodstypes.getGoodstype()}"></td>
 								</tr>
-								<div class="form-group">
-									<td>
-										<input name="goodstype" type="text" class="form-control" />
-										<button class="btn btn-sm btn-primary" type="submit">添加</button>
-										<a th:href="@{/goodstypemanager}" class="btn btn-sm btn-danger deleteBtn" >删除</a>
-									</td>
-								</div>
 							</table>
 						</div>
+						<td>
+							<input name="goodstypeid" type="text" class="form-control" />
+						</td>
+						<td>
+						<th></th>
+						</td>
+						<td>
+							<button class="btn btn-sm btn-primary" type="submit">添加</button>
+							<a th:href="@{/goodstypemanager}" class="btn btn-sm btn-danger deleteBtn" >删除</a>
+						</td>
 					</form>
+
 				</main>
 			</div>
 		</div>

@@ -24,7 +24,7 @@ public class GoodstypeService {
         goodstypeMapper.InsertGoodstype(goodstype);
     }
 
-    public void DeleteGoodsType(Integer id){
+    public void DeleteGoodsType(String id){
         goodstypeMapper.DeleteGoodsType(id);
     }
 

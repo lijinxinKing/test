@@ -74,9 +74,8 @@ public class goodscontrller {
     }
 
     @GetMapping("goodstypemanager")
-    public String DeleteGoodsType(@RequestParam("goodstype")Integer id){
-        Integer index = id;//Integer.parseInt(id);
-        goodstypeService.DeleteGoodsType(index);
+    public String DeleteGoodsType(@RequestParam("goodstypeid")String id){
+        goodstypeService.DeleteGoodsType(id);
         return "redirect:goods/types";
 
     }
