@@ -25,7 +25,13 @@ public class GoodstypeService {
     }
 
     public void DeleteGoodsType(String id){
-        goodstypeMapper.DeleteGoodsType(id);
+        int result = goodstypeMapper.DeleteGoodsType(id);
+        if(result == 1){
+            System.out.println("删除成功");
+        }else{
+            System.out.println("删除失败");
+        }
+
     }
 
     public String GetTypeName(Integer id){

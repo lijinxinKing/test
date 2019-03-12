@@ -8,10 +8,7 @@ import com.atguigu.springboot.service.GoodstypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import com.atguigu.springboot.service.GoodsAndTypeService;
 
 import java.util.Collection;
@@ -73,8 +70,8 @@ public class goodscontrller {
         return "goods/types";
     }
 
-    @GetMapping("goodstypemanager")
-    public String DeleteGoodsType(@RequestParam("goodstypeid")String id){
+    @RequestMapping("goodstypemanager/{goodstypeid}")
+    public String DeleteGoodsType(@PathVariable String id){
         goodstypeService.DeleteGoodsType(id);
         return "redirect:goods/types";
 
