@@ -12,8 +12,8 @@ public interface GoodstypeMapper {
     @Select("select *from goods_type")
     public List<goodstype> GetAllGoodsType();
 
-    @Delete("Delete from goods_type where goodstype=#{goodstype};")
-    public int DeleteGoodsType(@Param("goodstype")String goodstype);
+    @Delete("Delete from goods_type where id=#{id};")
+    public int DeleteGoodsType(@Param("id")Long id);
 
     @Select("select *from goods_type where id = #{id}")
     public goodstype GetGoodsTypeById(Integer id);

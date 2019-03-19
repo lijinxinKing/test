@@ -19,5 +19,13 @@ public interface GoodsMapper {
     @Options(useGeneratedKeys = true,keyProperty = "Id",keyColumn = "id")
     public int InsertGoods(Goods goods);
 
+    @Select("select *from  goods where estimate like '%好%' and estimate not like '%不好%' ")
+    public List<Goods> GetAllGoodBack();
+
+    @Select("select *from  goods where estimate like '%不好%' or estimate like '%差%' ")
+    public List<Goods> GetAllFeedBack();
+
+    @Select("select *from goods where id=#{id}")
+    public Goods GetGoodsById(Long id);
 
 }

@@ -65,19 +65,19 @@
 								<tr th:each="goodstypes:${allgoodstype}">
 									<td th:text="${goodstypesStat.index+1}">
 									<td th:text="${goodstypes.getId()}"></td>
-									<td th:text="${goodstypes.getGoodstype()}"></td>
+									<td th:text="${goodstypes.getGoodstype()}"/>
+									<td><a th:href="@{'/'+delete+'/'+${goodstypes.getId()}}">删除</a></td>
 								</tr>
 							</table>
 						</div>
 						<td>
-							<input name="goodstypeid" type="text" class="form-control" />
+							<input name="goodstype" type="text" class="form-control" />
 						</td>
 						<td>
 						<th></th>
 						</td>
 						<td>
 							<button class="btn btn-sm btn-primary" type="submit">添加</button>
-							<a th:href="@{'/goodstypemanager/${7}'}" class="btn btn-sm btn-danger deleteBtn" >删除</a>
 						</td>
 					</form>
 

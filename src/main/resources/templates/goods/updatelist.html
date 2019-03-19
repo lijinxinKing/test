@@ -71,10 +71,11 @@
                     </thead>
                     <tbody>
                     <tr th:each="goods:${allgoods}">
-                        <td th:text="${goods.id}"></td>
-                        <td th:text="${goods.info}"></td>
-                        <td th:text="${goods.typename}"/>
-                        <td th:text="${goods.estimate}"></td>
+                        <td th:text="${goods.getId()}"></td>
+                        <td th:text="${goods.getInfo()}"></td>
+                        <td th:text="${goods.getTypename()}"/>
+                        <td th:text="${goods.getEstimate()}"></td>
+                        <td><a th:href="@{'/'+update+'/'+${goods.getId()}}">更新</a></td>
                     </tr>
                     </tbody>
                 </table>

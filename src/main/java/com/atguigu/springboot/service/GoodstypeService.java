@@ -24,7 +24,7 @@ public class GoodstypeService {
         goodstypeMapper.InsertGoodstype(goodstype);
     }
 
-    public void DeleteGoodsType(String id){
+    public void DeleteGoodsType(Long id){
         int result = goodstypeMapper.DeleteGoodsType(id);
         if(result == 1){
             System.out.println("删除成功");

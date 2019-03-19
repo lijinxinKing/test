@@ -23,5 +23,19 @@ public class GoodsService {
         goodsMapper.InsertGoods(goods);
     }
 
+    public List<Goods> ListGoodBack(){
+        List<Goods>allGoodBack = goodsMapper.GetAllGoodBack();
+        return allGoodBack;
+    }
+
+    public List<Goods> ListFeedBack(){
+        List<Goods>allGoodBack = goodsMapper.GetAllFeedBack();
+        return allGoodBack;
+    }
+
+    public Goods GetGoodsById(Long id){
+        Goods allGoodBack = goodsMapper.GetGoodsById(id);
+        return allGoodBack;
+    }
 
 }

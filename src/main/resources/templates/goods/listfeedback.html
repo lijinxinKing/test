@@ -70,11 +70,11 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr th:each="goods:${allgoods}">
-                        <td th:text="${goods.id}"></td>
-                        <td th:text="${goods.info}"></td>
-                        <td th:text="${goods.typename}"/>
-                        <td th:text="${goods.estimate}"></td>
+                    <tr th:each="goods:${feedback}">
+                        <td th:text="${goods.getId()}"/>
+                        <td th:text="${goods.info}"/>
+                        <td th:text="${goods.getType()}"/>
+                        <td th:text="${goods.estimate}"/>
                     </tr>
                     </tbody>
                 </table>
